@@ -9,25 +9,41 @@
     <style>
         .carousel {
             position: relative;
-            width: 100%;
-            max-width: 700px;
+            inline-size: 100%;
+            max-inline-size: 700px;
             margin: auto;
-            overflow: hidden
+            overflow: hidden;
+            filter: grayscale(1);
+            border-radius: 35px;
+            @media screen and (width < 768px) {
+                border-radius: 20px;
+            }
+        }
+        .carousel:hover{
+            filter: grayscale(0);
         }
 
         .carousel img {
-            width: 100%;
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
             display: block;
+            
         }
 
         .carousel-item {
-            min-width: 100%;
+            min-inline-size: 100%;
+            block-size: 100%;     
             box-sizing: border-box;
         }
 
         .carousel-inner {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            max-inline-size: 934px;
+            inline-size: 100%;
+            max-block-size: 460px;
+            block-size: 50vw;
         }
 
         button.prev,
@@ -39,14 +55,15 @@
             border: none;
             cursor: pointer;
             color: white;
+            font-size:20px;
         }
 
         button.prev {
-            left: 10px;
+            inset-inline-start: 10px;
         }
 
         button.next {
-            right: 10px;
+            inset-inline-end: 10px;
         }
     </style>
 </head>
@@ -57,13 +74,19 @@
     <div class="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./assests/One.png" alt="Image 1">
+                <img src="./assests/PlantAndMachinery/PlantAndMachinery1.jpg" alt="Plants and Machinery ">
             </div>
             <div class="carousel-item">
-                <img src="./assests/Two.png" alt="Image 2">
+                <img src="./assests/PlantAndMachinery/PlantAndMachinery2.jpg" alt="Plants and Machinery">
             </div>
             <div class="carousel-item">
-                <img src="./assests/Three.png" alt="Image 3">
+                <img src="./assests/PlantAndMachinery/PlantAndMachinery3.jpg" alt="Plants and Machinery">
+            </div>
+            <div class="carousel-item">
+                <img src="./assests/PlantAndMachinery/PlantAndMachinery4.jpg" alt="Plants and Machinery">
+            </div>
+            <div class="carousel-item">
+                <img src="./assests/PlantAndMachinery/PlantAndMachinery1.jpg" alt="Plants and Machinery">
             </div>
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
